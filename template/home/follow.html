@@ -1,0 +1,38 @@
+{% extends 'app.html' %}
+{% load static %}
+{% block 'title' %} Follow {% endblock %}
+{% block 'follow-active' %}active{% endblock %}
+{% block 'custom-css' %}
+<style>
+  .card {
+    margin-bottom: 1rem!important;
+}
+</style>
+{% endblock %}
+{% block 'content' %}
+<div class="page-container">
+  <div class="main-content">
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <div id="show-peoples"></div>
+                </div>
+            </div>
+        </div>
+        <div class="d-none d-lg-block col-md-6">
+            <div class="card">
+                <div class="card-body">
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block 'custom-js' %}
+<script src="{% static 'js\custom\follow.js' %}"></script>
+{% endblock %}

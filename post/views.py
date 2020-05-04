@@ -12,9 +12,11 @@ def single_post(request,post_id):
 
 
 def post(request):
-    i = Post.objects.all()
+    ofst = request.POST['offset']
+    lmt = request.POST['limit']
+    posts = Post.objects.order_by('-id')[int(ofst):int(ofst)+int(lmt)]
     p = ""
-    for post in i:
+    for post in posts:
         updatetime = post.updated_at
         ptime = updatetime.strftime("%d-%h-%Y %I:%M:%p")
         p += """

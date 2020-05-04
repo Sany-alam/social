@@ -34,7 +34,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'post.apps.PostConfig',
     'home.apps.HomeConfig',
-    'userprofile.apps.UserprofileConfig',
+    'people.apps.PeopleConfig',
+    'follow.apps.FollowConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

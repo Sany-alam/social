@@ -148,9 +148,43 @@
                     <span class="icon-holder">
                         <!-- <i class="anticon anticon-dashboard"></i> -->
                         <!-- <i class="anticon anticon-layout"></i> -->
-                        <i style="color: #34c4fe;" class="fas fa-th-list"></i>
+                        <!-- <i style="color: #34c4fe;" class="fas fa-th-list"></i> -->
+                        <!-- <i style="color: #34c4fe;" class="fas fa-window-maximize"></i> -->
+                        <!-- <i style="color: #34c4fe;" class="far fa-window-maximize"></i> -->
+                        <!-- <i style="color: #34c4fe;" class="far fa-newspaper"></i> -->
+                        <i style="color: #34c4fe;" class="fas fa-newspaper"></i>
                     </span>
                     <span class="title">Newsfeed</span>
+                </a>
+            </li>
+            <li class="nav-item {% block 'messages-active' %}{% endblock %}">
+                <a href="/">
+                    <span class="icon-holder">
+                        <!-- <i style="color: #34c4fe;" class="fa fa-inbox"></i> -->
+                        <i style="color: #34c4fe;" class="far fa-comment-alt"></i>
+                        <!-- <i style="color: #34c4fe;" class="fas fa-comment-alt"></i> -->
+                        <!-- <i style="color: #34c4fe;" class="fab fa-facebook-messenger"></i> -->
+                    </span>
+                    <span class="title">Inbox</span>
+                </a>
+            </li>
+            <li class="nav-item {% block 'friends-active' %}{% endblock %}">
+                <a href="/follow">
+                    <span class="icon-holder">
+                        <!-- <i style="color: #34c4fe;" class="fa fa-user"></i> -->
+                        <!-- <i style="color: #34c4fe;" class="fas fa-user-check"></i> -->
+                        <i style="color: #34c4fe;" class="fas fa-rss-square"></i>
+                    </span>
+                    <span class="title">Connected</span>
+                </a>
+            </li>
+            <li class="nav-item {% block 'peoples-active' %}{% endblock %}">
+                <a href="/peoples">
+                    <span class="icon-holder">
+                        <!-- <i style="color: #34c4fe;" class="fa fa-user-circle"></i> -->
+                        <i style="color: #34c4fe;" class="fas fa-users"></i>
+                    </span>
+                    <span class="title">Peoples</span>
                 </a>
             </li>
         </ul>
