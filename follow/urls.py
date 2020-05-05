@@ -18,5 +18,7 @@ from . import views
 
 urlpatterns = [
     path('', views.follow, name='follow'),
-    path('add', views.following, name='following')
+    path('add', views.addfollowing, name='addfollowing'),
+    path('following', views.following, name='following'),
+    path('follower', views.follower, name='follower'),
 ]

@@ -11,21 +11,9 @@ def peoples(request):
 def showpeoples(request):
     ofst = request.POST['offset']
     lmt = request.POST['limit']
-    data = User.objects.order_by('-id')[int(ofst):int(ofst)+int(lmt)]
+    data = User.objects.filter(~Q(id=request.user.id)).order_by('-id')[int(ofst):int(ofst)+int(lmt)]
     all = ""
     for p in data:
-        # if Follow.objects.filter(follwer=request.user.id).filter(follwing=p.id).exists():
-        #     icon = """<a onclick="follow("""+str(p.id)+""")" href="#" style="padding: .35rem 0.4rem;" class="mx-md-2 btn btn-info btn-tone">
-        #             <i class="fas fa-user-plus"></i>
-        #         </a>"""
-        # elif Follow.objects.filter(follwing=request.user.id).filter(follwer=p.id).exists():
-        #     icon = """<a onclick="follow("""+str(p.id)+""")" href="#" style="padding: .35rem 0.4rem;" class="mx-md-2 btn btn-info btn-tone">
-        #             <i class="fas fa-user-plus"></i>
-        #         </a>"""
-        # else:
-        #     icon = """<a onclick="follow("""+str(p.id)+""")" href="#" style="padding: .35rem 0.4rem;" class="mx-md-2 btn btn-info btn-tone">
-        #             <i class="fas fa-user-plus"></i>
-        #         </a>"""
         all += """
         <div class="d-flex justify-content-between align-items-center m-b-30 ">
             <div class="d-flex">
