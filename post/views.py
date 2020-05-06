@@ -2,8 +2,10 @@ from django.shortcuts import render
 from django.http import HttpResponse,JsonResponse
 from .models import Post
 from .models import Comment
+from follow.models import Follow
 from django.utils.text import Truncator
 import json
+from django.db.models import Q
 
 # Create your views here.
 def single_post(request,post_id):
@@ -14,7 +16,7 @@ def single_post(request,post_id):
 def post(request):
     ofst = request.POST['offset']
     lmt = request.POST['limit']
-    posts = Post.objects.order_by('-id')[int(ofst):int(ofst)+int(lmt)]
+    posts = Post.objects.filter(Q(owner=request.user.id)|Q(owner__in=Follow.objects.filter(follower=request.user.id).values('following'))).order_by('-id')[int(ofst):int(ofst)+int(lmt)]
     p = ""
     for post in posts:
         updatetime = post.updated_at

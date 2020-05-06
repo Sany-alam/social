@@ -1,8 +1,9 @@
 $(document).ready(function(){
   
-    var flag = 0;
 
-    posts()
+  posts()
+
+    var flag = 0;
 
   $(window).scroll(function() {
     if ($(window).scrollTop() >= $(document).height()-$(window).height()) {

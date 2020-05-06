@@ -20,5 +20,7 @@ urlpatterns = [
     path('', views.follow, name='follow'),
     path('add', views.addfollowing, name='addfollowing'),
     path('following', views.following, name='following'),
+    path('following/remove', views.following_remove, name='following_remove'),
     path('follower', views.follower, name='follower'),
+    path('follower/remove', views.follower_remove, name='follower_remove'),
 ]

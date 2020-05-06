@@ -15,21 +15,7 @@
     {% for message in messages %}
     <div class="alert alert-{{ message.tags }}">{{ message }}</div>
     {% endfor %}
-    <!-- <div class="row">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <div id="show-connected"></div>
-                </div>
-            </div>
-        </div>
-        <div class="d-none d-lg-block col-md-6">
-            <div class="card">
-                <div class="card-body">
-                </div>
-            </div>
-        </div>
-    </div> -->
+    <div id="alert"></div>
     <div class="card">
         <div class="card-header">
             <ul class="nav nav-tabs pt-3" id="myTab" role="tablist">

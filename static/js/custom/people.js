@@ -55,7 +55,7 @@ function follow(id) {
     url: "/follow/add",
     data:formdata,
     success: function(data) {
-      alert(data)
+      $("#alert").html(data)
       show_peoples()
     }
   })
